@@ -27,15 +27,15 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
             <div class="container-fluid">
                 <!-- <img src="https://www.agenciaeplus.com.br/wp-content/uploads/2018/05/ecommercedesigner.jpg" class="logo"> -->
-                
 
-                
+
+
                 <a class="navbar-brand" href="#">Logo</a>
-                
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -67,10 +67,179 @@
             </div>
         </nav>
 
+        <!-- second child -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Bem vindo(a) convidado(a)</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Login</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- third child -->
+        <div class="bg-light">
+            <h3 class="text-center">Produtos</h3>
+            <p class="text-center">a comunicação está no centro do e-commerce e da comunidade</p>
+        </div>
+
+        <!-- fourth child -->
+        <div class="row">
+            <div class="col-md-10">
+                <!-- products -->
+                <div class="row">
+
+                    <div class="col-md-4 mb-2">
+                        <div class="card">
+                            <img src="./images/perfume1.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-info">Adicionar</a>
+                                <a href="#" class="btn btn-secondary">Veja mais</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-2">
+                        <div class="card">
+                            <img src="./images/perfume2.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-info">Adicionar</a>
+                                <a href="#" class="btn btn-secondary">Veja mais</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-2">
+                        <div class="card">
+                            <img src="./images/perfume3.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-info">Adicionar</a>
+                                <a href="#" class="btn btn-secondary">Veja mais</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-2">
+                        <div class="card">
+                            <img src="./images/perfume4.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-info">Adicionar</a>
+                                <a href="#" class="btn btn-secondary">Veja mais</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-2">
+                        <div class="card">
+                            <img src="./images/perfume1.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-info">Adicionar</a>
+                                <a href="#" class="btn btn-secondary">Veja mais</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-2">
+                        <div class="card">
+                            <img src="./images/perfume2.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-info">Adicionar</a>
+                                <a href="#" class="btn btn-secondary">Veja mais</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-2">
+                        <div class="card">
+                            <img src="./images/perfume3.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-info">Adicionar</a>
+                                <a href="#" class="btn btn-secondary">Veja mais</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-2">
+                        <div class="card">
+                            <img src="./images/perfume4.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-info">Adicionar</a>
+                                <a href="#" class="btn btn-secondary">Veja mais</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-2 bg-secondary p-0">
+                <ul class="navbar-nav me-auto text-center">
+
+                    <!-- Marcas -->
+                    <li class="nav-item bg-info">
+                        <a href="#" class="nav-link text-light"><h5>Marcas de Entregas</h5></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-light">Marca 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-light">Marca 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-light">Marca 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-light">Marca 4</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-light">Marca 5</a>
+                    </li>
+
+                    <!-- Categorias -->
+                    <li class="nav-item bg-info">
+                        <a href="#" class="nav-link text-light"><h5>Categorias</h5></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-light">Categoria 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-light">Categoria  2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-light">Categoria  3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-light">Categoria  4</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-light">Categoria  5</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
         <!-- last child -->
         <div class="bg-info p-3 text-center">
             <p>Todos os direitos reservados - by Gilmar P Martins</p>
         </div>
+
     </div>
 
     <!-- Bootstrap js link -->
