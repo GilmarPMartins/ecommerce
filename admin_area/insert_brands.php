@@ -30,13 +30,13 @@
             } else {  ?>
                 <div class="alert alert-danger" role="alert">
                     Não foi possivel inserir a marca <?=  $brand_title ?> .
-                </div> <?php
-               
+                </div> <?php               
             }
         }    
     }   
 ?>
 
+<h2 class="text-center">Inserir Marcas</h2>
 <form action="" method="post" class="mb-2">
     
     <div class="input-group w-90 mb-2">

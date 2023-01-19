@@ -1,3 +1,7 @@
+<?php 
+   include('includes/connect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -192,43 +196,41 @@
 
                     <!-- Marcas -->
                     <li class="nav-item bg-info">
-                        <a href="#" class="nav-link text-light"><h5>Marcas de Entregas</h5></a>
+                        <a href="#" class="nav-link text-light"><h5>Marcas</h5></a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-light">Marca 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-light">Marca 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-light">Marca 3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-light">Marca 4</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-light">Marca 5</a>
-                    </li>
+
+                    <?php
+                        $select_brands = "Select * from brands order by brands_title";
+                        $result_brands = $conn->query($select_brands)->fetchAll(PDO::FETCH_ASSOC);
+
+                        foreach($result_brands as $result) {
+                            $id = $result['id'];
+                            echo " <li class='nav-item'>
+                                        <a href='index.php?brand=$id' class='nav-link text-light'> " . $result['brands_title'] . "</a>   
+                                    </li>";    
+                        }
+                    ?>
 
                     <!-- Categorias -->
                     <li class="nav-item bg-info">
                         <a href="#" class="nav-link text-light"><h5>Categorias</h5></a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-light">Categoria 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-light">Categoria  2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-light">Categoria  3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-light">Categoria  4</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-light">Categoria  5</a>
-                    </li>
+                    
+                    <?php
+                        $select_categories = "Select * from categories order by category_title";
+                        $result_categories = $conn->query($select_categories)->fetchAll(PDO::FETCH_ASSOC);
+
+                        foreach($result_categories as $result) {
+                            $id = $result['id'];
+                            echo " 
+                                    <li class='nav-item'>
+                                        <a href='index.php?category=$id' class='nav-link text-light' class='nav-link text-light'> " . $result['category_title'] . "</a>   
+                                    </li>
+                                ";    
+                        }
+                    ?>
+
+
                 </ul>
             </div>
         </div>
