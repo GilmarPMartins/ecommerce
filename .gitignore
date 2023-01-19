@@ -1,3 +1,4 @@
-git
-leiame
-images
+git.*
+leiame.*
+**/images
+*.gitignore
