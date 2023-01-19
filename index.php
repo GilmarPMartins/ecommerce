@@ -26,9 +26,7 @@
         <!-- first child -->
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
             <div class="container-fluid">
-                <!-- <img src="https://www.agenciaeplus.com.br/wp-content/uploads/2018/05/ecommercedesigner.jpg" class="logo"> -->
-
-
+                <img src="./images//logo.png" class="logo">
 
                 <a class="navbar-brand" href="#">Logo</a>
 
