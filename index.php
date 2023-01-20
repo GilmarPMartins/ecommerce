@@ -1,5 +1,5 @@
-<?php 
-   include('includes/connect.php');
+<?php
+include('includes/connect.php');
 ?>
 
 <!DOCTYPE html>
@@ -88,147 +88,89 @@
         </div>
 
         <!-- fourth child -->
-        <div class="row">
+        <div class="row px-1">
             <div class="col-md-10">
-                <!-- products -->
+
+                <!-- produtos -->
                 <div class="row">
 
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img src="./images/perfume1.jfif" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-info">Adicionar</a>
-                                <a href="#" class="btn btn-secondary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    $sql = "Select * from products order by product_title";
+                    $stmt = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img src="./images/perfume2.jfif" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-info">Adicionar</a>
-                                <a href="#" class="btn btn-secondary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
+                    // var_dump($stmt); die;
 
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img src="./images/perfume3.jfif" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-info">Adicionar</a>
-                                <a href="#" class="btn btn-secondary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
+                    foreach ($stmt as $item) {
+                        $product_id          = $item['id'];
+                        $product_title       = $item['product_title'];
+                        $product_description = $item['product_description'];
+                        $product_image1      = $item['product_image1'];
+                        $product_price       = $item['product_price'];
+                        $category_id         = $item['category_id'];
+                        $brand_id            = $item['brand_id'];
 
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img src="./images/perfume4.jfif" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-info">Adicionar</a>
-                                <a href="#" class="btn btn-secondary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
+                        echo "
+                                    <div class='col-md-4 mb-2'>
+                                    <div class='card'>
+                                        <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+                                        <div class='card-body'>
+                                            <h5 class='card-title'>$product_title</h5>
+                                            <p class='card-text'>$product_description</p>
+                                            <a href='#' class='btn btn-info'>Adicionar</a>
+                                            <a href='#' class='btn btn-secondary'>Veja mais</a>
+                                        </div>
+                                    </div>
+                                </div>                           
+                           ";
+                    }
 
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img src="./images/perfume1.jfif" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-info">Adicionar</a>
-                                <a href="#" class="btn btn-secondary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
+                    ?>
 
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img src="./images/perfume2.jfif" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-info">Adicionar</a>
-                                <a href="#" class="btn btn-secondary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img src="./images/perfume3.jfif" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-info">Adicionar</a>
-                                <a href="#" class="btn btn-secondary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img src="./images/perfume4.jfif" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-info">Adicionar</a>
-                                <a href="#" class="btn btn-secondary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
             </div>
-            
+
             <div class="col-md-2 bg-secondary p-0">
                 <ul class="navbar-nav me-auto text-center">
 
                     <!-- Marcas -->
                     <li class="nav-item bg-info">
-                        <a href="#" class="nav-link text-light"><h5>Marcas</h5></a>
+                        <a href="#" class="nav-link text-light">
+                            <h5>Marcas</h5>
+                        </a>
                     </li>
 
                     <?php
-                        $select_brands = "Select * from brands order by brands_title";
-                        $result_brands = $conn->query($select_brands)->fetchAll(PDO::FETCH_ASSOC);
+                    $select_brands = "Select * from brands order by brands_title";
+                    $result_brands = $conn->query($select_brands)->fetchAll(PDO::FETCH_ASSOC);
 
-                        foreach($result_brands as $result) {
-                            $id = $result['id'];
-                            echo " <li class='nav-item'>
+                    foreach ($result_brands as $result) {
+                        $id = $result['id'];
+                        echo " <li class='nav-item'>
                                         <a href='index.php?brand=$id' class='nav-link text-light'> " . $result['brands_title'] . "</a>   
-                                    </li>";    
-                        }
+                                    </li>";
+                    }
                     ?>
 
                     <!-- Categorias -->
                     <li class="nav-item bg-info">
-                        <a href="#" class="nav-link text-light"><h5>Categorias</h5></a>
+                        <a href="#" class="nav-link text-light">
+                            <h5>Categorias</h5>
+                        </a>
                     </li>
-                    
-                    <?php
-                        $select_categories = "Select * from categories order by category_title";
-                        $result_categories = $conn->query($select_categories)->fetchAll(PDO::FETCH_ASSOC);
 
-                        foreach($result_categories as $result) {
-                            $id = $result['id'];
-                            echo " 
+                    <?php
+                    $select_categories = "Select * from categories order by category_title";
+                    $result_categories = $conn->query($select_categories)->fetchAll(PDO::FETCH_ASSOC);
+
+                    foreach ($result_categories as $result) {
+                        $id = $result['id'];
+                        echo " 
                                     <li class='nav-item'>
                                         <a href='index.php?category=$id' class='nav-link text-light' class='nav-link text-light'> " . $result['category_title'] . "</a>   
                                     </li>
-                                ";    
-                        }
+                                ";
+                    }
                     ?>
 
 
