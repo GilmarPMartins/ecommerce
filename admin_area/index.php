@@ -65,7 +65,7 @@
                 <!-- button*10>a.nav-link.tet-light.bg-info.my-1 -->
                 <div class="button text-center">
                     <button class="my-3">
-                        <a href="" class="nav-link text-light bg-info my-1">
+                        <a href="insert_product.php" class="nav-link text-light bg-info my-1">
                             Inserir Produtos
                         </a>
                     </button>
