@@ -2,3 +2,4 @@ git
 leiame
 **/images
 .gitignore
+**/admin_area/product_images
