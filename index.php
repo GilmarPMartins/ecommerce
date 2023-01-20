@@ -191,6 +191,7 @@
 
                 </div>
             </div>
+            
             <div class="col-md-2 bg-secondary p-0">
                 <ul class="navbar-nav me-auto text-center">
 
