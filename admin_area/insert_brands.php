@@ -20,8 +20,6 @@
             );
             $stmt->bindParam(':brand', $brand_title, PDO::PARAM_STR, 100);
 
-            // $stmt->execute($prepare);
-
             if ($stmt->execute($prepare)) {  ?>
                 <div class="alert alert-success" role="alert">
                     Marca <?=  $brand_title ?>  inserida com êxito

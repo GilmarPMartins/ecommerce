@@ -1,7 +1,91 @@
 <?php
 
     include('../includes/connect.php');
+    if(isset($_POST['insert_product'])) {
 
+        // var_dump($_POST); die;
+
+        $product_title       = $_POST['product_title'];
+        $product_description = $_POST['product_description'];
+        $product_category    = $_POST['product_category'];
+        $product_brands      = $_POST['product_brands'];
+        $product_price       = $_POST['product_price'];
+        $product_status      = 1;
+
+        // Imagens
+        $product_image1 = $_FILES['product_image1']['name'];
+        $product_image2 = $_FILES['product_image2']['name'];
+        $product_image3 = $_FILES['product_image3']['name'];
+        
+        // Acessando imagens
+        $temp_image1 = $_FILES['product_image1']['tmp_name'];
+        $temp_image2 = $_FILES['product_image2']['tmp_name'];
+        $temp_image3 = $_FILES['product_image3']['tmp_name'];
+        
+        // Checando condições vazias
+        if( $product_title          == '' or 
+            $product_description    == '' or 
+            $product_category       == '' or 
+            $product_brands         == '' or 
+            $product_price          == '' or
+            $product_image1         == '' or 
+            $product_image2         == '' or 
+            $product_image3         == '') {
+            echo " <div class='alert alert-success' role='alert'>
+                        Por favor preencha todos os campos
+                    </div> ";
+            exit();        
+        } else {
+            move_uploaded_file($temp_image1, "./product_images/$product_image1");
+            move_uploaded_file($temp_image2, "./product_images/$product_image2");
+            move_uploaded_file($temp_image3, "./product_images/$product_image3");
+
+            // inserindo no banco de dados o produto
+            $sql = "insert into products 
+                    (   
+                        product_title, 
+                        product_description,
+                        category_id, 
+                        brand_id, 
+                        product_image1, 
+                        product_image2, 
+                        product_image3, 
+                        product_price, 
+                        status
+                    )
+                    values 
+                    (
+                        '$product_title', 
+                        '$product_description',
+                        $product_category, 
+                        $product_brands, 
+                        '$product_image1', 
+                        '$product_image2', 
+                        '$product_image3', 
+                        $product_price, 
+                        $product_status
+                    ) ";
+
+            try  {
+
+                $stmt = $conn->query($sql);        
+                echo "
+                        <div class='alert alert-success' role='alert'>
+                            Produto $product_title  inserido com êxito
+                        </div>
+                ";   
+
+            } catch( PDOException $e) {
+                $err = $e->getMessage();
+                echo "
+                        <div class='alert alert-danger' role='alert'>
+                            Dados não gravado: $err
+                        </div>
+                ";              
+            }       
+
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -43,14 +127,9 @@
                 <input type="text" name="product_description" id="product_description" class="form-control" placeholder="Entre com a descrição do produto" autocomplete="off" required="required">
             </div>
 
-            <!-- Palavra chave -->
-            <div class="form-outline mb-4 w-50 m-auto">
-                <label for="product_keywords" class="form-label">Palavra chave</label>
-                <input type="text" name="product_keywords" id="product_keywords" class="form-control" placeholder="Entre com a palavra chave do produto" autocomplete="off" required="required">
-            </div>
-
             <!-- Categorias -->
             <div class="form-outline mb-4 w-50 m-auto">
+            <label for="product_category" class="form-label">Categorias</label>
                 <select name="product_category" id="" class="form-select">
                     <option value="">Selecione uma categoria</option>
                     <?php
@@ -67,7 +146,8 @@
 
             <!-- Marcas -->
             <div class="form-outline mb-4 w-50 m-auto">
-                <select name="product_category" id="" class="form-select">
+            <label for="product_brands" class="form-label">Marcas</label>
+                <select name="product_brands" id="" class="form-select">
                     <option value="">Selecione uma marca</option>
                     <?php
                         $sql="Select * from brands order by brands_title";
@@ -101,7 +181,7 @@
 
             <!-- Preço-->
             <div class="form-outline mb-4 w-50 m-auto">
-                <label for="product_price" class="form-label">Palavra chave</label>
+                <label for="product_price" class="form-label">Preço</label>
                 <input type="text" name="product_price" id="product_price" class="form-control" placeholder="Preço do produto" autocomplete="off" required="required">
             </div>
 
