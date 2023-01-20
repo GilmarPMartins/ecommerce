@@ -1,5 +1,11 @@
+<?php
+
+    include('../includes/connect.php');
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -47,9 +53,15 @@
             <div class="form-outline mb-4 w-50 m-auto">
                 <select name="product_category" id="" class="form-select">
                     <option value="">Selecione uma categoria</option>
-                    <option value="">Categoria1</option>
-                    <option value="">Categoria2</option>
-                    <option value="">Categoria3</option>
+                    <?php
+                        $sql="Select * from categories order by category_title";
+                        $stmt = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+                        foreach($stmt as $item) {
+                            $id = $item['id'];
+                            $value = $item['category_title'];
+                            echo "<option value='$id'> $value </option>";
+                        }
+                    ?>
                 </select>
             </div>
 
@@ -57,9 +69,15 @@
             <div class="form-outline mb-4 w-50 m-auto">
                 <select name="product_category" id="" class="form-select">
                     <option value="">Selecione uma marca</option>
-                    <option value="">Marca1</option>
-                    <option value="">Marca2</option>
-                    <option value="">Marca3</option>
+                    <?php
+                        $sql="Select * from brands order by brands_title";
+                        $stmt = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+                        foreach($stmt as $item) {
+                            $id = $item['id'];
+                            $value = $item['brands_title'];
+                            echo "<option value='$id'> $value </option>";
+                        }
+                    ?>
                 </select>
             </div>
 
@@ -89,7 +107,7 @@
 
             <!-- Preço-->
             <div class="form-outline mb-4 w-50 m-auto">
-                <input type="submit" name="insert_product>
+                <input type="submit" name="insert_product" class="btn btn-info" value="Inserir Produto">
             </div>
 
         </form>
